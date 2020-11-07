@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tips",
+  "info": {
+    "name": "tips"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "type": {
+      "type": "integer"
+    },
+    "categoryId": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "package",
+  "info": {
+    "name": "package"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "packageId": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "monthly": {
+      "type": "integer"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "selected": {
+      "type": "boolean"
+    },
+    "name": {
+      "type": "string"
+    },
+    "enName": {
+      "type": "string"
+    },
+    "enPrice": {
+      "type": "integer"
+    },
+    "enMonthly": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "string"
+    },
+    "enDescription": {
+      "type": "string"
+    },
+    "enExtra": {
+      "type": "string"
+    }
+  }
+}

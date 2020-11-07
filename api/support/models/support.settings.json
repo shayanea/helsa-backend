@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "support",
+  "info": {
+    "name": "support"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "fullname": {
+      "type": "string"
+    },
+    "tel": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "message": {
+      "type": "text"
+    }
+  }
+}

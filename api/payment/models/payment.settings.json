@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payment",
+  "info": {
+    "name": "payment"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "authority": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "createDate": {
+      "type": "date"
+    },
+    "refId": {
+      "type": "string"
+    },
+    "packageId": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "isExpired": {
+      "type": "boolean"
+    }
+  }
+}

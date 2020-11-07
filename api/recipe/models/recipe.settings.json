@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipe",
+  "info": {
+    "name": "recipe"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "preparationTime": {
+      "type": "string"
+    },
+    "coockingTime": {
+      "type": "string"
+    },
+    "carbs": {
+      "type": "string"
+    },
+    "fiber": {
+      "type": "string"
+    },
+    "protein": {
+      "type": "string"
+    },
+    "fat": {
+      "type": "string"
+    },
+    "calorie": {
+      "type": "string"
+    },
+    "servings": {
+      "type": "integer"
+    },
+    "instruction": {
+      "type": "text"
+    },
+    "ingredients": {
+      "type": "text"
+    },
+    "picture": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": ["images", "files", "videos"],
+      "plugin": "upload",
+      "required": false
+    },
+    "categoryId": {
+      "type": "string"
+    },
+    "mealType": {
+      "type": "string"
+    },
+    "suggestion": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "refrence",
+  "info": {
+    "name": "refrence"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "code": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "count": {
+      "type": "integer"
+    }
+  }
+}

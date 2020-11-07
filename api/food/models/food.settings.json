@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "food",
+  "info": {
+    "name": "food"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "enName": {
+      "type": "string"
+    },
+    "calorie": {
+      "type": "string"
+    },
+    "type": {
+      "type": "integer"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "servingType": {
+      "type": "string"
+    },
+    "servingPerContainer": {
+      "type": "integer"
+    },
+    "carbohydrates": {
+      "type": "string"
+    },
+    "protien": {
+      "type": "string"
+    },
+    "sugar": {
+      "type": "string"
+    },
+    "totalFat": {
+      "type": "string"
+    }
+  }
+}
