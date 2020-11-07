@@ -21,14 +21,14 @@
     "refId": {
       "type": "string"
     },
-    "packageId": {
-      "type": "string"
-    },
     "userId": {
       "type": "string"
     },
     "isExpired": {
       "type": "boolean"
+    },
+    "packageId": {
+      "type": "integer"
     }
   }
 }
