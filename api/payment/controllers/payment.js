@@ -71,8 +71,8 @@ module.exports = {
             { _id: ctx.request.body.id },
             {
               authority: ctx.request.body.authority,
-              refId: response.RefID,
-              status: response.status,
+              refId: response.RefID.toString(),
+              status: response.status.toString(),
             }
           );
         }
