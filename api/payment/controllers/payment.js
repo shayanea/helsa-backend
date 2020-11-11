@@ -1,6 +1,7 @@
 const ZarinpalCheckout = require("zarinpal-checkout");
 const zarinpal = ZarinpalCheckout.create(
-  "1fdb4262-8955-11e9-aeb9-000c29344814"
+  "1fdb4262-8955-11e9-aeb9-000c29344814",
+  false
 );
 
 /**
@@ -54,34 +55,30 @@ module.exports = {
     return ctx.send(zarinResult);
   },
   validate: async (ctx, next) => {
-    const result = await strapi.services.payment.find({
-      _id: ctx.request.body.id,
-    });
-    const zarinResult = await zarinpal
+    const { id } = ctx.request.body;
+    const payment = await strapi.services.payment.findOne({ id });
+    const result = await zarinpal
       .PaymentVerification({
         Authority: ctx.request.body.authority,
-        Amount: findPackagePriceById(result.packageId).price,
+        Amount: findPackagePriceById(payment.packageId).price,
       })
-      .then((response) => {
-        if (response.status !== 100) {
-          console.log("Empty!");
-        } else {
-          console.log(`Verified! Ref ID: ${response.RefID}`);
-          strapi.services.payment.update(
-            { _id: ctx.request.body.id },
+      .then(async (response) => {
+        if (response.status == 100) {
+          await strapi.query("payment").update(
+            { id },
             {
               authority: ctx.request.body.authority,
               refId: response.RefID.toString(),
-              status: response.status.toString(),
+              status: "100",
             }
           );
+          return { ...response, packageId: payment.packageId };
         }
-        return { ...response, packageId: result.packageId };
+        return { ...response, packageId: payment.packageId };
       })
       .catch((err) => {
         return err;
       });
-
-    return ctx.send(zarinResult);
+    return ctx.send(result);
   },
 };
