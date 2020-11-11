@@ -67,15 +67,15 @@ module.exports = {
           console.log("Empty!");
         } else {
           console.log(`Verified! Ref ID: ${response.RefID}`);
+          strapi.services.payment.update(
+            { _id: ctx.request.body.id },
+            {
+              authority: ctx.request.body.authority,
+              refId: response.RefID,
+              status: response.status,
+            }
+          );
         }
-        strapi.services.payment.update(
-          { _id: ctx.request.body.id },
-          {
-            authority: ctx.request.body.authority,
-            refId: response.RefID,
-            status: response.status,
-          }
-        );
         return { ...response, packageId: result.packageId };
       })
       .catch((err) => {
