@@ -68,7 +68,7 @@ module.exports = {
         } else {
           console.log(`Verified! Ref ID: ${response.RefID}`);
         }
-        strapi.services.payment.edit(
+        strapi.services.payment.update(
           { _id: ctx.request.body.id },
           {
             authority: ctx.request.body.authority,
@@ -76,21 +76,6 @@ module.exports = {
             status: response.status,
           }
         );
-        // strapi.plugins["email"].services.email
-        //   .send({
-        //     to: "admin@strapi.io",
-        //     from: "برنامه هلساول <no-reply@helsawell.com>",
-        //     replyTo: "no-reply@strapi.io",
-        //     subject: "Use strapi email provider successfully",
-        //     text: "Hello world! 1",
-        //     html: "Hello world! 2",
-        //   })
-        //   .then((res) => {
-        //     console.log("success", res.data);
-        //   })
-        //   .catch((err) => {
-        //     console.log("error", err[0].messages[0]);
-        //   });
         return { ...response, packageId: result.packageId };
       })
       .catch((err) => {
