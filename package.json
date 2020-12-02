@@ -11,6 +11,7 @@
   },
   "devDependencies": {},
   "dependencies": {
+    "axios": "^0.21.0",
     "strapi": "3.1.4",
     "strapi-admin": "3.1.4",
     "strapi-connector-mongoose": "3.1.4",
@@ -19,7 +20,7 @@
     "strapi-plugin-email": "3.1.4",
     "strapi-plugin-upload": "3.1.4",
     "strapi-plugin-users-permissions": "3.1.4",
-    "strapi-utils": "3.1.4",
+    "strapi-utils": "3.3.2",
     "zarinpal-checkout": "^0.2.7"
   },
   "author": {

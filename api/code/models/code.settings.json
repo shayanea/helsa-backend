@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "codes",
+  "info": {
+    "name": "code"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "code": {
+      "type": "string"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

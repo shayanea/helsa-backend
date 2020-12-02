@@ -1,0 +1,13 @@
+{
+  "collectionName": "auths",
+  "info": {
+    "name": "auth",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {}
+}
